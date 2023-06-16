@@ -13,5 +13,8 @@ const ll INF = 1LL << 60; // 無限大
 
 int main()
 {
+    int a, b, c;
+    cin >> a >> b >> c;
+    cout << b * a / 2 << endl;
     return 0;
 }

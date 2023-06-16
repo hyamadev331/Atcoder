@@ -13,5 +13,28 @@ const ll INF = 1LL << 60; // 無限大
 
 int main()
 {
+    int s;
+    cin >> s;
+    map<int, int> mp;
+    mp[s]++;
+    int cnt = 1;
+    while (1)
+    {
+        if (s % 2 == 0)
+        {
+            s /= 2;
+        }
+        else
+        {
+            s = 3 * s + 1;
+        }
+        cnt++;
+        if (mp[s] > 0)
+        {
+            cout << cnt << endl;
+            return 0;
+        }
+        mp[s]++;
+    }
     return 0;
 }

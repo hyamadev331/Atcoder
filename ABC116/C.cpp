@@ -13,5 +13,22 @@ const ll INF = 1LL << 60; // 無限大
 
 int main()
 {
+    int n;
+    cin >> n;
+    vector<int> h(n);
+    int ans = 0;
+    rep(i, n)
+    {
+        cin >> h[i];
+    }
+    ans = h[0];
+    for (int i = 1; i < n; i++)
+    {
+        if (h[i] > h[i - 1])
+        {
+            ans += h[i] - h[i - 1];
+        }
+    }
+    cout << ans << endl;
     return 0;
 }
