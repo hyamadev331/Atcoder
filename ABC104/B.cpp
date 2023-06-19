@@ -13,27 +13,32 @@ const ll INF = 1LL << 60; // 無限大
 
 int main()
 {
-    int n;
-    cin >> n;
-    vector<string> w(n);
-    map<string, int> mp;
-    bool ans = true;
-    rep(i, n)
+    string s;
+    cin >> s;
+    if (s[0] != 'A')
     {
-        cin >> w[i];
-        if ((i > 0 && w[i][0] != w[i - 1][len(w[i - 1]) - 1]) || mp[w[i]] > 0)
-        {
-            ans = false;
-        }
-        mp[w[i]]++;
+        cout << "WA" << endl;
+        return 0;
     }
-    if (ans)
+    int cnt_c = 0, cnt_m = 0;
+    reps(i, len(s))
     {
-        cout << "Yes" << endl;
+        if (s[i] == 'C' && i > 1 && i < len(s) - 1)
+        {
+            cnt_c++;
+        }
+        else if (s[i] >= 'a' && s[i] <= 'z')
+        {
+            cnt_m++;
+        }
+    }
+    if (cnt_c == 1 && cnt_m == len(s) - 2)
+    {
+        cout << "AC" << endl;
     }
     else
     {
-        cout << "No" << endl;
+        cout << "WA" << endl;
     }
     return 0;
 }

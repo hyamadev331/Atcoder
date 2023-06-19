@@ -13,27 +13,19 @@ const ll INF = 1LL << 60; // 無限大
 
 int main()
 {
-    int n;
-    cin >> n;
-    vector<string> w(n);
-    map<string, int> mp;
-    bool ans = true;
-    rep(i, n)
+    int r;
+    cin >> r;
+    if (r < 1200)
     {
-        cin >> w[i];
-        if ((i > 0 && w[i][0] != w[i - 1][len(w[i - 1]) - 1]) || mp[w[i]] > 0)
-        {
-            ans = false;
-        }
-        mp[w[i]]++;
+        cout << "ABC" << endl;
     }
-    if (ans)
+    else if (r < 2800)
     {
-        cout << "Yes" << endl;
+        cout << "ARC" << endl;
     }
     else
     {
-        cout << "No" << endl;
+        cout << "AGC" << endl;
     }
     return 0;
 }

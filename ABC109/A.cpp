@@ -13,5 +13,16 @@ const ll INF = 1LL << 60; // 無限大
 
 int main()
 {
+    int a, b;
+    cin >> a >> b;
+    reps(i, 4)
+    {
+        if ((a * b * i) % 2 == 1)
+        {
+            cout << "Yes" << endl;
+            return 0;
+        }
+    }
+    cout << "No" << endl;
     return 0;
 }

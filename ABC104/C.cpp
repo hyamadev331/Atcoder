@@ -13,27 +13,5 @@ const ll INF = 1LL << 60; // 無限大
 
 int main()
 {
-    int n;
-    cin >> n;
-    vector<string> w(n);
-    map<string, int> mp;
-    bool ans = true;
-    rep(i, n)
-    {
-        cin >> w[i];
-        if ((i > 0 && w[i][0] != w[i - 1][len(w[i - 1]) - 1]) || mp[w[i]] > 0)
-        {
-            ans = false;
-        }
-        mp[w[i]]++;
-    }
-    if (ans)
-    {
-        cout << "Yes" << endl;
-    }
-    else
-    {
-        cout << "No" << endl;
-    }
     return 0;
 }

@@ -13,23 +13,8 @@ const ll INF = 1LL << 60; // 無限大
 
 int main()
 {
-    int N, K;
-    cin >> N >> K;
-    int ans = 0;
-    reps(i, N + 1)
-    {
-        reps(j, N + 1)
-        {
-            reps(k, N + 1)
-            {
-                if ((i + j) % K == 0 && (j + k) % K == 0 && (i + k) % K == 0)
-                {
-                    cout << i + j + k << endl;
-                    ans++;
-                }
-            }
-        }
-    }
-    cout << ans << endl;
+    int x1, y1, x2, y2;
+    cin >> x1 >> y1 >> x2 >> y2;
+
     return 0;
 }
