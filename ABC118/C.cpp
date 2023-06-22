@@ -11,26 +11,32 @@ typedef long long ll;
 using namespace std;
 const ll INF = 1LL << 60; // 無限大
 
+long long gcd(long long a, long long b)
+{
+    if (a % b == 0)
+    {
+        return b;
+    }
+    else
+    {
+        return gcd(b, a % b);
+    }
+}
+
 int main()
 {
-    int x1, y1, x2, y2;
-    cin >> x1 >> y1 >> x2 >> y2;
-    int ax = x2 - x1, ay = y2 - y1;
-    int x = x2, y = y2;
-    rep(i, 2)
+    int n;
+    cin >> n;
+    vector<long long> a(n);
+    rep(i, n)
     {
-        int ox = x, oy = y;
-        x -= ay;
-        y += ax;
-        ax = x - ox;
-        ay = y - oy;
-        cout << x << " " << y;
-        if (i == 0)
-        {
-            cout << " ";
-        }
+        cin >> a[i];
     }
-    cout << endl;
-
+    long long ans = a[0];
+    reps(i, n)
+    {
+        ans = gcd(ans, a[i]);
+    }
+    cout << ans << endl;
     return 0;
 }

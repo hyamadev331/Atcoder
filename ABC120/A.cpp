@@ -13,24 +13,8 @@ const ll INF = 1LL << 60; // 無限大
 
 int main()
 {
-    int x1, y1, x2, y2;
-    cin >> x1 >> y1 >> x2 >> y2;
-    int ax = x2 - x1, ay = y2 - y1;
-    int x = x2, y = y2;
-    rep(i, 2)
-    {
-        int ox = x, oy = y;
-        x -= ay;
-        y += ax;
-        ax = x - ox;
-        ay = y - oy;
-        cout << x << " " << y;
-        if (i == 0)
-        {
-            cout << " ";
-        }
-    }
-    cout << endl;
-
+    int a, b, c;
+    cin >> a >> b >> c;
+    cout << min(b / a, c) << endl;
     return 0;
 }
