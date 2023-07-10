@@ -15,14 +15,22 @@ int main()
 {
     int n;
     cin >> n;
-    ll ans = 0;
-
+    vector<ll> a(n);
+    vector<ll> x(n);
     rep(i, n)
     {
-        int a;
-        cin >> a;
-        ans += abs(a - i - 1);
+        cin >> a[i];
+        x[i] = a[i] - (i + 1);
     }
+
+    sort(x.begin(), x.end());
+
+    ll ans = 0;
+    rep(i, n)
+    {
+        ans += abs(x[n / 2] - x[i]);
+    }
+
     cout << ans << endl;
     return 0;
 }
